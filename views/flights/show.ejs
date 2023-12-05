@@ -11,13 +11,16 @@
 
 <div>Tickets</div>
 <% tickets.forEach(function(ticket) { %>
-  <% console.log('Ticket:', ticket); %> <!-- Log ticket details -->
-  <div>Ticket</div>
+  <!-- Display existing tickets -->
+  <div>Ticket: <%= ticket.details %></div>
 <% }) %>
-<!-- <! add to destinations form- form> -->
-<br><br><br><h2>Add A Destination</h2>
 
-<% if (!flight?.destination?[0].arrival) { %>
+<!-- New Ticket link -->
+<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+
+<!-- Add Destination Form -->
+<h2>Add A Destination</h2>
+
     <form id="add-to-dest" action="/flights/<%= flight._id %>/destinations" method="post">
         <select name="airport">
         <option value="AUS">AUSTIN</option>
@@ -39,5 +42,5 @@
     <button type="submit" action="/flights">Submit</button>
 </form>
 
-<% } %>
+
 <%- include('../partials/footer') %>

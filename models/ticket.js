@@ -18,4 +18,5 @@ flight: {
     timestamps: true
 })
 
+
 module.exports = mongoose.model('Ticket', ticketSchema)
