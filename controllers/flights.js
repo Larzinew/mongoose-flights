@@ -1,6 +1,7 @@
 const Flight = require('../models/flight');
-const Ticket = require('../models/ticket');
 const Destination = require('../models/flight');
+const Ticket = require('../models/ticket');
+
 
 module.exports = {
   index,
@@ -49,4 +50,6 @@ async function createDestination(req, res) {
   }
   res.redirect(`/flights/${flight._id}`);
 }
+
+
 
